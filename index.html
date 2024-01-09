@@ -1,4 +1,28 @@
 <html>
   <head></head>
-  <body></body>
+  <body>
+        <h1 id="countdown">The bomb will explode</h1>
+    
+    <script>
+        
+        var count = 5;
+        
+        function updateCountdown() {
+            if (count > 0) {
+                document.getElementById("countdown").innerHTML = count + "left";
+                
+                setTimeout(function(){
+                    count--;
+                    updateCountdown();
+                }, 1000);
+            } else {
+                document.getElementById("countdown").innerHTML = "This is Hitler's victory";
+            }
+        }
+        
+        $(document).ready(function(){
+            updateCountdown();
+        });
+    </script>
+  </body>
 </html>
